@@ -1,0 +1,90 @@
+.header {
+    background: #222222;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.headerBtn {
+    display: flex;
+    align-items: center;
+    gap: 41px;
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.buttonCart {
+    position: relative;
+}
+
+.hiddenCart {
+    display: none;
+}
+
+.btnCounter {
+    position: absolute;
+    width: 17px;
+    color: #ffffff;
+    top: -5px;
+    right: -5px;
+    border:1px solid #F16D7F;
+    border-radius: 50%;
+    background-color: #F16D7F;
+    
+}
+
+.burgerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 0 32px 32px;
+    position: absolute;
+    top: 77px;
+    right: 330px;
+    background: #ffffff;
+    width: 200px;
+    z-index: 10;
+    transition: right 0.3s;
+    box-shadow: 6px 4px 35px 0 rgba(0, 0, 0, 0.21);
+}
+
+.burgerMenu__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding-left: 21.5px;
+}
+
+.hidden {
+    right: -9999999px;
+}
+
+.burgerMenu h2,
+a {
+    font-family: "Lato", sans-serifLa;
+    font-size: 14px;
+}
+
+.burgerMenu a {
+    color: #6f6e6e;
+}
+
+.burgerMenu__text-fw {
+    font-weight: 700;
+    color: #000;
+}
+
+.burgerMenu__text-red {
+    color: #F16D7F;
+}
+
+.burgerMenu__text-a {
+    color: #6f6e6e;
+}

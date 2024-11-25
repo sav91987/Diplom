@@ -1,0 +1,147 @@
+.main {
+    background: #F8F3F4;
+}
+
+.main__wrapper {
+    display: flex;
+    justify-content: start;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-bottom: 65px;
+    position: relative;
+}
+
+
+.mainLeftSide {
+    max-width: 800px;
+}
+
+.mainRightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 290px 0 381px 91px;
+}
+
+.text {
+    color: #000;
+    
+}
+
+.textFormat {
+    padding-left: 16px;
+    border-left: 12px solid #F16D7F;
+}
+
+.textMainTitle {
+    font-weight: 900;
+    font-size: 48px;
+}
+
+.textMain {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.redColor {
+    color: #F16D7F;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 96px;
+}
+
+.cardFirst {
+    width: 360px;
+    height: 260px;
+    background-image: url(../../../public/img/cardsPicture1.png);
+}
+
+.shadow {
+    background: rgba(33, 22, 22, 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+h4 {
+    color: #F16D7F;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.textCardFormat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cardSecond {
+    width: 360px;
+    height: 260px;
+    background-image: url(../../../public/img/cardsPicture2.png);
+}
+
+.cardThird {
+    width: 360px;
+    height: 260px;
+    background-image: url(../../../public/img/cardsPicture3.png);
+}
+
+.cardFourth {
+    width: 1140px;
+    height: 180px;
+    background-image: url(../../../public/img/cardsPicture4.png);
+}
+
+.textSalesTitle {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.textSales {
+    color: #9f9f9f;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.salesTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    margin-bottom: 48px;
+}
+
+.salesCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 30px;
+}
+
+.btnCentr {
+    display: flex;
+    align-items: center;
+    border: 1px solid #F16D7F;
+    color: #F16D7F;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #fff;
+    padding: 15px 39px;
+    margin-bottom: 60px;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: 0.3s ease;
+}

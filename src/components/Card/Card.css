@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@600;800&display=swap");
+
+.salesCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 30px;
+}
+
+.salesCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 360px;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+}
+
+.salesCard__image {
+  position: relative;
+}
+
+.salesCard__img {
+  border-radius: 15px 15px 0 0;
+}
+
+.salesCard__btnAddToCart {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  gap: 11px;
+  justify-content: center;
+  top: 188px;
+  left: 110px;
+  background: none;
+  border: 1px solid #ffffff;
+  padding: 11px 8px 13px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  opacity: 0;
+  transition: 0.5s ease;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.75s;
+  border-radius: 15px 15px 0 0;
+}
+
+.salesCard__image:hover .overlay {
+  background: rgba(58, 56, 56, 0.86);
+  transition: 0.75s;
+}
+
+.salesCard__image:hover .salesCard__btnAddToCart {
+  opacity: 1;
+  transition: 0.75s ease;
+  transform: translateY(-20px);
+}
+
+.saleCardName {
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 16px;
+  margin-top: 8px;
+}
+
+.saleCardDiscript {
+  color: #5d5d5d;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 0 30px 0 16px;
+}
+
+.saleCardPrice {
+  color: #F16D7F;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 0 24px 16px;
+}
+
+.pagination {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  margin: 48px 0 96px;
+  padding: 12px 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  width: 284px;
+}
+
+.pagination__cover {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination__numbers {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  color: #c4c4c4;
+}
+
+.pagination__numbers-first {
+  color: #F16D7F;
+}

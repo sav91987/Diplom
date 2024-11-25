@@ -1,0 +1,41 @@
+.footer {
+  background-color: #222222;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.footer__text {
+  color: #fbfbfb;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footer__icons {
+  display: flex;
+  gap: 7px;
+}
+
+.footer__icons-btn {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.footer__icons-btn:hover {
+  background-color: #F16D7F;
+}
+
+.footer__icons-btn:hover svg {
+  fill: #ffffff;
+}
