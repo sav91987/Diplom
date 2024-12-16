@@ -1,5 +1,5 @@
 .header {
-    background: #222222;
+    background: #FF460D;
 }
 
 .header__wrapper {
@@ -34,9 +34,9 @@
     color: #ffffff;
     top: -5px;
     right: -5px;
-    border:1px solid #F16D7F;
+    border:1px solid #000;
     border-radius: 50%;
-    background-color: #F16D7F;
+    background-color: #000;
     
 }
 

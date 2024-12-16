@@ -38,45 +38,11 @@ function Header() {
                             <img src={"/img/headerLogo.svg"} alt="headerLogo" />
                         </button>
                     </Link>
-
-                    <button className="button">
-                        <img src={"/img/btnSearch.svg"} alt="btnSearch" />
-                    </button>
                 </div>
-                <div class="headerBtn">
-                    <button onClick={handleClick} className="button btnMenu">
-                        <img src={"/img/btnMenu.svg"} alt="btnMenu" />
-                    </button>
+                <div className="headerBtn">
+                    
 
-                    <div className="burgerMenu hidden">
-                        <h2 className="burgerMenu__text-fw">MENU</h2>
-                        <h2 className="burgerMenu__text-red">MAN</h2>
-                        <div className="burgerMenu__categories burgerMenu__text-a">
-                            <a href="#">Accessories</a>
-                            <a href="#">Bags</a>
-                            <a href="#">Denim</a>
-                            <a href="#">T-Shirts</a>
-                        </div>
-
-                        <h2 clasName="burgerMenu__text-red">WOMAN</h2>
-                        <div className="burgerMenu__categories burgerMenu__text-a">
-                            <a href="#">Accessories</a>
-                            <a href="#">Jackets &amp; Coats</a>
-                            <a href="#">Polos</a>
-                            <a href="#">T-Shirts</a>
-                            <a href="#">Shirts</a>
-                        </div>
-
-                        <h2 className="burgerMenu__text-red">KIDS</h2>
-                        <div className="burgerMenu__categories burgerMenu__text-a">
-                            <a href="#">Accessories</a>
-                            <a href="#">Jackets &amp; Coats</a>
-                            <a href="#">Polos</a>
-                            <a href="#">T-Shirts</a>
-                            <a href="#">Shirts</a>
-                            <a href="#">Bags</a>
-                        </div>
-                    </div>
+                    
 
                     <Link to="/Registration">
                         <button className="button buttonNone">

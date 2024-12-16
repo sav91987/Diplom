@@ -4,6 +4,10 @@
     margin-bottom: -30px;
   }
 
+  .swiper__img {
+    max-height: 600px;
+  }
+
   .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -37,14 +41,15 @@
 
   .producDiscription__type {
     padding: 65px 0 12px;
-    width: 1140px;
+    width: 200px;
     font-size: 14px;
     line-height: 17px;
-    color: #F16D7F;
+    color: #FF460D;
+    border-bottom: 2px solid #FF460D;
   }
 
   .producDiscription__name {
-    padding: 12px 0 48px;
+    padding: 12px 0 35px;
     width: 1140px;
     font-size: 18px;
     line-height: 22px;
@@ -63,15 +68,15 @@
     width: 1140px;
     font-size: 24px;
     line-height: 29px;
-    color: #F16D7F;
-    padding-bottom: 64px;
+    color: #FF460D;
+    padding-bottom: 48px;
   }
 
   .producDiscription__parameters {
     display: flex;
     justify-content: center;
     width: 1140px;
-    padding: 64px 0 48px;
+    padding: 0 0 48px;
     gap: 15px;
   }
 
@@ -86,13 +91,27 @@
   .producDiscription__btnAddToCart {
     display: flex;
     align-items: center;
-    color: #F16D7F;
+    color: #FF460D;
     gap: 22px;
     justify-content: center;
     background: none;
-    border: 1px solid #F16D7F;
-    padding: 12px 57px 12px 24px;
+    border: 1px solid #FF460D;
+    padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
     font-family: "Lato", sans-serif;
+    transition: 0.2s;
+    border-radius: 3px;
+  }
+
+  .producDiscription__btnAddToCart:hover {
+    transition: 0.2s;
+    border: 1px solid #FF460D;
+    background: #FF460D;
+    color: #fff;
+  }
+
+  .producDiscription__btnAddToCart:hover svg {
+    transition: 0.2s;
+    fill: #fff;
   }

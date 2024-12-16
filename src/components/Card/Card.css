@@ -14,14 +14,18 @@
   max-width: 360px;
   background-color: #f8f8f8;
   border-radius: 15px;
+  margin-bottom: 50px;
 }
 
 .salesCard__image {
   position: relative;
+  background-color: rgb(235, 224, 224);
+  border-radius: 15px 15px 0 0;
+  height: 414px;
 }
 
 .salesCard__img {
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 15px 0 0; 
 }
 
 .salesCard__btnAddToCart {
@@ -77,6 +81,8 @@
   font-size: 14px;
   font-weight: 300;
   padding: 0 30px 0 16px;
+  max-height: 60px;
+  overflow: hidden;
 }
 
 .saleCardPrice {

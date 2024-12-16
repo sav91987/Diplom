@@ -37,11 +37,9 @@ function Card({ data, numOfShownItems }) {
     };
 
     const handleCardClick = (e) => {
-        console.log(newData);
         const productArr = newData.filter(
             (item) => +/\d+/.exec(e.target.getAttribute("id")) == item.id
         );
-        console.log(productArr);
         if (!localStorage.getItem("productPage")) {
             localStorage.setItem("productPage", JSON.stringify(productArr));
         } else {
@@ -52,12 +50,12 @@ function Card({ data, numOfShownItems }) {
 
     return (
         <>
-            <section class="salesCards container">
+            <section className="salesCards container">
                 {newData.map((element) => (
-                    <div class="salesCard">
-                        <div class="salesCard__image">
+                    <div key={element.id} className="salesCard">
+                        <div className="salesCard__image">
                             <img
-                                class="salesCard__img"
+                                className="salesCard__img"
                                 src={"/" + element.imgUrl}
                                 alt={element.imgAlt}
                             />
@@ -66,83 +64,34 @@ function Card({ data, numOfShownItems }) {
                                 <div
                                     onClick={handleCardClick}
                                     id={"overlay" + element.id}
-                                    class="overlay"
+                                    className="overlay"
                                 ></div>
                             </Link>
 
                             <button
                                 onClick={addToCart}
                                 id={element.id}
-                                class="salesCard__btnAddToCart"
+                                className="salesCard__btnAddToCart"
                             >
                                 <img
                                     onClick={addToCart}
                                     src={"/img/btnBasket.svg"}
                                     alt="btnBasket"
                                 />
-                                Add to Cart
+                                В корзину
                             </button>
                         </div>
-                        <p class="saleCardName text">{element.saleCardName}</p>
-                        <p class="saleCardDiscript text">
+                        <p className="saleCardName text">{element.saleCardName}</p>
+                        <p className="saleCardDiscript text">
                             {element.saleCardDiscript}
                         </p>
-                        <p class="saleCardPrice text">
-                            ${element.saleCardPrice}
+                        <p className="saleCardPrice text">
+                        ₽ {element.saleCardPrice}
                         </p>
                     </div>
                 ))}
             </section>
 
-            <div class="pagination__cover">
-                <div class="pagination">
-                    <svg
-                        width="8"
-                        height="14"
-                        viewBox="0 0 8 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M7.99512 2L2.99512 7L7.99512 12L6.99512 14L-0.00488281 7L6.99512 0L7.99512 2Z"
-                            fill="black"
-                        />
-                    </svg>
-                    <a
-                        href="#"
-                        class="pagination__numbers pagination__numbers-first"
-                    >
-                        1
-                    </a>
-                    <a href="#" class="pagination__numbers">
-                        2
-                    </a>
-                    <a href="#" class="pagination__numbers">
-                        3
-                    </a>
-                    <a href="#" class="pagination__numbers">
-                        4
-                    </a>
-                    <a href="#" class="pagination__numbers">
-                        5
-                    </a>
-                    <a href="#" class="pagination__numbers">
-                        6.....20
-                    </a>
-                    <svg
-                        width="8"
-                        height="14"
-                        viewBox="0 0 8 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M-0.00500488 12L4.995 7L-0.00500488 2L0.994995 0L7.995 7L0.994995 14L-0.00500488 12Z"
-                            fill="black"
-                        />
-                    </svg>
-                </div>
-            </div>
         </>
     );
 }

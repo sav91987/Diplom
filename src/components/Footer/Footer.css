@@ -1,5 +1,5 @@
 .footer {
-  background-color: #222222;
+  background-color: #FF460D;
 }
 
 .footer__wrapper {
@@ -33,9 +33,6 @@
 }
 
 .footer__icons-btn:hover {
-  background-color: #F16D7F;
-}
-
-.footer__icons-btn:hover svg {
-  fill: #ffffff;
+  transform: scale(1.2);
+  transition: transform 0.2s;
 }

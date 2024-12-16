@@ -38,7 +38,6 @@ function SelectedProduct() {
         });
 
         setTotalCost(total);
-        console.log(totalCost);
     };
 
     const getCartArr = (targetID) => {
@@ -52,6 +51,8 @@ function SelectedProduct() {
             setTimeout(() => {
                 window.location.href = "/Catalog";
             }, 2000);
+        } else {
+            window.location.reload();
         }
     };
 
@@ -63,37 +64,54 @@ function SelectedProduct() {
         } else {
             getCartArr(e.target.id);
         }
+    
+    };
+
+    const payment = (e) => {
+        const country = document.getElementById("country");
+        const city = document.getElementById("city");
+        const street = document.getElementById("street");
+        if (country.value === "" || city.value === "" || street.value === "") {
+            alert("Заполните все поля адреса");
+        } else {
+            alert("Оплата прошла успешно!");
+            clearCartClick();
+            e.preventDefault();
+        }
     };
 
     useEffect(() => getGrandTotal());
 
     return (
         <>
-            <section class="top-head">
-                <div class="top-head__wrapper container">
-                    <h2 class="top-head__heading">SHOPPING CART</h2>
+            <section className="top-head">
+                <div className="top-head__wrapper container">
+                    <h2 className="top-head__heading">КОРЗИНА</h2>
                 </div>
             </section>
 
-            <section class="selectedProduct-adress container">
-                <div class="selectedProduct">
-                    <div class="selectedProduct__container">
+            <section className="selectedProduct-adress container">
+                <div className="selectedProduct">
+                    <div className="selectedProduct__container">
                         {selectedProducts.map((element) => (
-                            <div class="selectedProduct__box">
+                            <div
+                                key={element.id}
+                                className="selectedProduct__box"
+                            >
                                 <img
-                                    class="selectedProduct__box-img"
+                                    className="selectedProduct__box-img"
                                     src={"/" + element.imgUrl}
                                     alt="SalePicture3"
                                 />
-                                <div class="selectedProduct__parametrs">
-                                    <div class="selectedProduct__box-top">
-                                        <h2 class="selectedProduct__box-top-header">
+                                <div className="selectedProduct__parametrs">
+                                    <div className="selectedProduct__box-top">
+                                        <h2 className="selectedProduct__box-top-header">
                                             {element.saleCardName}
                                         </h2>
                                         <button
                                             onClick={removeItemFromCart}
                                             id={element.id}
-                                            class="selectedProduct__box-top-btn"
+                                            className="selectedProduct__box-top-btn"
                                         >
                                             <svg
                                                 width="18"
@@ -110,29 +128,21 @@ function SelectedProduct() {
                                             </svg>
                                         </button>
                                     </div>
-                                    <div class="selectedProduct__param-box">
+                                    <div className="selectedProduct__param-box">
                                         <h2>
                                             Цена:
-                                            <span class="selectedProduct__param-box-price">
-                                                {" " + element.saleCardPrice} Р
+                                            <span className="selectedProduct__param-box-price">
+                                                {" " + element.saleCardPrice} ₽
                                             </span>
                                         </h2>
-                                        <h2>
-                                            Цвет:
-                                            <span class="selectedProduct__param-box-text">
-                                                Red
-                                            </span>
-                                        </h2>
-                                        <h2>
-                                            Размер: <span>{element.size}</span>
-                                        </h2>
-                                        <div class="selectedProduct__param-box-quantity">
+
+                                        <div className="selectedProduct__param-box-quantity">
                                             <h2>Количество:</h2>
                                             <input
                                                 placeholder={element.quantity}
                                                 id={element.id}
                                                 onChange={handleChange}
-                                                class="selectedProduct__param-box-quantity-input"
+                                                className="selectedProduct__param-box-quantity-input"
                                                 type="number"
                                             />
                                         </div>
@@ -152,62 +162,66 @@ function SelectedProduct() {
                         </h2>
                     </div>
 
-                    <div class="selectedProduct__btn">
+                    <div className="selectedProduct__btn">
                         <button
                             onClick={clearCartClick}
-                            class="selectedProduct__btn-format"
+                            className="selectedProduct__btn-format"
                         >
-                            CLEAR SHOPPING CART
+                            ОЧИСТИТЬ КОРЗИНУ
                         </button>
                         <button
                             onClick={continueShoppingClick}
-                            class="selectedProduct__btn-format"
+                            className="selectedProduct__btn-format"
                         >
-                            CONTINUE SHOPPING
+                            ПРОДОЛЖИТЬ ПОКУПКИ
                         </button>
                     </div>
                 </div>
 
-                <div class="adress">
-                    <form class="adress__box">
-                        <h2>SHIPPING ADRESS</h2>
-                        <input
-                            class="adress__input"
-                            type="text"
-                            placeholder="Country"
-                        />
-                        <input
-                            class="adress__input"
-                            type="text"
-                            placeholder="State"
-                        />
-                        <input
-                            class="adress__input"
-                            type="text"
-                            placeholder="Postcode / Zip"
-                        />
+                <div>
+                    <form className="adress">
+                        <div className="adress__box">
+                            <h2>АДРЕС ДОСТАВКИ</h2>
+                            <input
+                                className="adress__input"
+                                type="text"
+                                placeholder="Страна"
+                                id="country"
+                            />
+                            <input
+                                className="adress__input"
+                                type="text"
+                                placeholder="Город"
+                                id="city"
+                            />
+                            <input
+                                className="adress__input"
+                                type="text"
+                                placeholder="Улица"
+                                id="street"
+                            />
+                        </div>
 
-                        <button class="adress__btn">GET A QUOTE</button>
+                        <div className="adress__price-box">
+                            <div className="adress__totalPrice-box">
+                                <h2 className="adress__totalPrice-box-text">
+                                    К ОПЛАТЕ:{" "}
+                                    <span className="adress__totalPrice-box-price">
+                                        {totalCost} ₽
+                                    </span>
+                                </h2>
+                            </div>
+                            <div className="adress__price-box-btn">
+                                <button
+                                    onClick={payment}
+                                    type="submit"
+                                    className="adress__price-box-btn-format"
+                                >
+                                    ОПЛАТИТЬ
+                                </button>
+                            </div>
+                        </div>
                     </form>
-                    <div class="adress__price-box">
-                        <div class="adress__subPrice-box">
-                            <h2 class="adress__subPrice-box-text">SUB TOTAL</h2>
-                            <h2 class="adress__subPrice-box-text">$900</h2>
-                        </div>
-                        <div class="adress__totalPrice-box">
-                            <h2 class="adress__totalPrice-box-text">
-                                GRAND TOTAL
-                            </h2>
-                            <h2 class="adress__totalPrice-box-price">
-                                {totalCost}
-                            </h2>
-                        </div>
-                        <div class="adress__price-box-btn">
-                            <button class="adress__price-box-btn-format">
-                                PROCEED TO CHECKOUT
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </section>
         </>

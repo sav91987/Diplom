@@ -1,5 +1,5 @@
 .top-head {
-    background: #F8F3F4;
+    background: #f8f8f8;
 }
 
 .top-head__wrapper {
@@ -14,7 +14,7 @@
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
-    color: #F16D7F;
+    color: #FF460D;
 }
 
 .selectedProduct-adress {
@@ -91,7 +91,7 @@
 }
 
 .selectedProduct__param-box-price {
-    color: #F16D7F;
+    color: #FF460D;
 }
 
 .selectedProduct__param-box-text {
@@ -127,11 +127,12 @@
     font-size: 14px;
     color: #000;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .selectedProduct__btn-format:hover {
     color: #ffffff;
-    background-color: #F16D7F;
+    background-color: #FF460D;
     transition: 0.3s;
 }
 
@@ -153,7 +154,7 @@
     width: 360px;
     display: flex;
     flex-direction: column;
-    gap: 57px;
+    gap: 100px;
 }
 
 .adress__box {
@@ -161,7 +162,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 275px;
+    
 }
 
 .adress__box h2 {
@@ -208,14 +209,14 @@
 
 .adress__btn:hover {
     color: #fff;
-    background-color: #F16D7F;
+    background-color: #FF460D;
 }
 
 .adress__price-box {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: #f5f3f3;
+    background-color: #f8f8f8;
     padding: 42px;
     box-sizing: border-box;
 }
@@ -248,8 +249,9 @@
 
 .adress__totalPrice-box-price {
     font-family: "Lato";
-    color: #F16D7F;
+    color: #FF460D;
     font-weight: 700;
+    font-size: 18px;
 }
 
 .adress__price-box-btn {
@@ -260,17 +262,20 @@
 .adress__price-box-btn-format {
     width: 100%;
     border: 1px solid #a4a4a4;
-    padding: 16px 42px;
+    padding: 16px;
     font-family: "Lato";
     font-weight: 400;
     font-size: 16px;
     color: #4a4a4a;
     background-color: #fff;
     cursor: pointer;
+    width: 276px;
+    transition: 0.3s;
 }
 
 .adress__price-box-btn-format:hover {
     color: #fff;
-    background-color: #F16D7F;
+    background-color: #FF460D;
     border: none;
+    transition: 0.3s;
 }

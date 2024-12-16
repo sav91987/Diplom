@@ -1,6 +1,6 @@
 .advantages {
-  color: #fbfbfb;
-  background: #222222;
+  color: #000;
+  background: #f8f8f8;
   font-family: Lato;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .advantages__title {
-  color: #fbfbfb;
+  color: #000;
   font-size: 20px;
   font-weight: 400;
   padding: 28px 0 16px 0;

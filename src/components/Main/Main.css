@@ -1,11 +1,11 @@
 .main {
-    background: #F8F3F4;
+    background: #f8f8f8;
 }
 
 .main__wrapper {
     display: flex;
-    justify-content: start;
-    max-width: 1600px;
+    justify-content: center;
+    max-width: 1400px;
     margin: 0 auto;
     margin-bottom: 65px;
     position: relative;
@@ -14,13 +14,17 @@
 
 .mainLeftSide {
     max-width: 800px;
+    background-color: #f8f8f8;
+    margin: 50px;
+    
+    
+    
 }
 
 .mainRightSide {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 290px 0 381px 91px;
 }
 
 .text {
@@ -30,7 +34,7 @@
 
 .textFormat {
     padding-left: 16px;
-    border-left: 12px solid #F16D7F;
+    border-left: 3px solid #FF460D;
 }
 
 .textMainTitle {
@@ -44,7 +48,7 @@
 }
 
 .redColor {
-    color: #F16D7F;
+    color: #FF460D;
 }
 
 .card {
@@ -134,8 +138,9 @@ h4 {
 .btnCentr {
     display: flex;
     align-items: center;
-    border: 1px solid #F16D7F;
-    color: #F16D7F;
+    border: 1px solid #FF460D;
+    border-radius: 3px;
+    color: #FF460D;
     font-size: 16px;
     font-weight: 400;
     background-color: #fff;
@@ -143,5 +148,11 @@ h4 {
     margin-bottom: 60px;
     cursor: pointer;
     margin-top: 18px;
+    transition: 0.3s ease;
+}
+
+.btnCentr:hover {
+    color: #fff;
+    background-color: #FF460D;
     transition: 0.3s ease;
 }
