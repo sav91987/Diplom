@@ -59,7 +59,7 @@ function Card({ data, numOfShownItems }) {
                                 src={"/" + element.imgUrl}
                                 alt={element.imgAlt}
                             />
-                            
+
                             <Link to={"/Catalog/" + element.id}>
                                 <div
                                     onClick={handleCardClick}
@@ -81,17 +81,18 @@ function Card({ data, numOfShownItems }) {
                                 В корзину
                             </button>
                         </div>
-                        <p className="saleCardName text">{element.saleCardName}</p>
+                        <p className="saleCardName text">
+                            {element.saleCardName}
+                        </p>
                         <p className="saleCardDiscript text">
                             {element.saleCardDiscript}
                         </p>
                         <p className="saleCardPrice text">
-                        ₽ {element.saleCardPrice}
+                            ₽ {element.saleCardPrice}
                         </p>
                     </div>
                 ))}
             </section>
-
         </>
     );
 }

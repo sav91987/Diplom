@@ -7,7 +7,6 @@ function FilterSort({ arrOfProducts }) {
     const [sortOrder, setSortOrder] = useState(arrOfProducts);
     const [selectedSizes, setSelectedSizes] = useState([]);
     const [arrSelectedCategory, setArrSelectedCategory] = useState([]);
-    const [arrSelectedSizes, setArrSelectedSizes] = useState([]);
 
     const getIntersectionArr = (arr1, arr2, param) => {
         if (arr2.length === 0) {
@@ -17,16 +16,12 @@ function FilterSort({ arrOfProducts }) {
             switch (param) {
                 case "price":
                     arr2.forEach((element) => {
-                        console.log(element);
                         switch (element) {
                             case "less1000":
-                                console.log(arr1);
-
                                 arr1.forEach((item) => {
                                     if (item.saleCardPrice <= 1000) {
                                         filteredArr.push(item);
                                     }
-                                    console.log(filteredArr);
                                 });
                                 break;
                             case "1000-4000":
@@ -51,7 +46,6 @@ function FilterSort({ arrOfProducts }) {
                         }
                     });
 
-                    setArrSelectedSizes(filteredArr);
                     break;
                 case "category":
                     filteredArr = arr1.filter((item) =>
@@ -69,33 +63,21 @@ function FilterSort({ arrOfProducts }) {
     };
 
     const handleClick = (e) => {
-        /* const size = e.target.parentNode.innerText; */
         const price = e.target.id;
-        console.log(e.target.id);
-        /* let arrOfSizes; */
         let arrOfPrices;
 
         if (e.target.checked) {
-            /* arrOfSizes = [...selectedSizes, size]; */
             arrOfPrices = [...selectedSizes, price];
         } else {
-            /*  arrOfSizes = selectedSizes.filter(
-                (selectedSize) => selectedSize !== size
-            ); */
             arrOfPrices = selectedSizes.filter(
                 (selectedSize) => selectedSize !== price
             );
         }
-        console.log(arrSelectedCategory);
-        console.log(arrOfPrices);
-
-        /* setSelectedSizes(arrOfSizes); */
+        
         setSelectedSizes(arrOfPrices);
         if (arrSelectedCategory.length !== 0) {
-            /* getIntersectionArr(arrSelectedCategory, arrOfSizes, "size"); */
             getIntersectionArr(arrSelectedCategory, arrOfPrices, "price");
         } else {
-            /* getIntersectionArr(arrOfProducts, arrOfSizes, "size"); */
             getIntersectionArr(arrOfProducts, arrOfPrices, "price");
         }
     };
