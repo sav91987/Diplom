@@ -8,7 +8,8 @@ function Adventages() {
                     <img src={"/img/iconDelivery.svg"} alt="iconDelivery" />
                     <h2 className="advantages__title">Доставка</h2>
                     <p className="advantages__text">
-                        Выполняем доставку любыми транспортными компаниями. Тарифы на перевозки узнавайте у перевозчика.
+                        Выполняем доставку любыми транспортными компаниями.
+                        Тарифы на перевозки узнавайте у перевозчика.
                     </p>
                 </div>
                 <div className="advantages__card">
@@ -20,7 +21,8 @@ function Adventages() {
                         Отличные скидки
                     </h2>
                     <p className="advantages__text">
-                        При заказе от 10 единиц товара предлагаем приятные скидки.
+                        При заказе от 10 единиц товара предлагаем приятные
+                        скидки.
                     </p>
                 </div>
                 <div className="advantages__card">
@@ -29,7 +31,8 @@ function Adventages() {
                         Качество
                     </h2>
                     <p className="advantages__text">
-                        Все товары проверяются перед отправкой. Проводится диагностика основных узлов.
+                        Все товары проверяются перед отправкой. Проводится
+                        диагностика основных узлов.
                     </p>
                 </div>
             </div>
