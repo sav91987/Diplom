@@ -8,7 +8,6 @@ import RegistarationPage from "./components/RegistarationPage/RegistarationPage"
 import DataContext from "./context/DataContext";
 import data from "./dataInfo.json";
 
-
 function App() {
     return (
         <div className="App">

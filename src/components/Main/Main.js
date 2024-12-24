@@ -16,7 +16,10 @@ function Main() {
                             ТЕЛЕКОНТАКТ
                         </h1>
                         <h2 className="text textFormat textMain">
-                        <br/>ОФИСНЫЕ КОМПЬЮТЕРЫ <br/>МОНИТОРЫ<br/>
+                            <br />
+                            ОФИСНЫЕ КОМПЬЮТЕРЫ <br />
+                            МОНИТОРЫ
+                            <br />
                             <span className="redColor">СЕРВЕРЫ</span>
                         </h2>
                     </div>

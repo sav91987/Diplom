@@ -3,7 +3,6 @@ import "./Footer.css";
 function Footer() {
     const handleClick = (e) => {
         const id = e.target.parentNode.getAttribute("id");
-        console.log(id);
         switch (id) {
             case "1":
                 window.open(
@@ -20,10 +19,13 @@ function Footer() {
                 break;
         }
     };
+    
     return (
         <footer className="footer">
             <div className="footer__wrapper container">
-                <p className="footer__text">© 2024 Sotnikov All Rights Reserved.</p>
+                <p className="footer__text">
+                    © 2024 Sotnikov All Rights Reserved.
+                </p>
                 <div className="footer__icons">
                     <button
                         id="1"

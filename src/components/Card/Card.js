@@ -32,7 +32,6 @@ function Card({ data, numOfShownItems }) {
         } else {
             getCartArr(e.target);
         }
-
         alert("Добавлено в корзину!");
     };
 
@@ -47,7 +46,6 @@ function Card({ data, numOfShownItems }) {
             localStorage.setItem("productPage", JSON.stringify(productArr));
         }
     };
-
     return (
         <>
             <section className="salesCards container">
@@ -59,7 +57,6 @@ function Card({ data, numOfShownItems }) {
                                 src={"/" + element.imgUrl}
                                 alt={element.imgAlt}
                             />
-
                             <Link to={"/Catalog/" + element.id}>
                                 <div
                                     onClick={handleCardClick}
@@ -67,7 +64,6 @@ function Card({ data, numOfShownItems }) {
                                     className="overlay"
                                 ></div>
                             </Link>
-
                             <button
                                 onClick={addToCart}
                                 id={element.id}

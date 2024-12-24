@@ -6,11 +6,6 @@ function Header() {
     const [numOfGoodsInCart, setNumOfGoodsInCart] = useState();
     const [flag, setFlag] = useState(true);
 
-    const handleClick = () => {
-        const menu = document.querySelector(".burgerMenu");
-        menu.classList.toggle("hidden");
-    };
-
     if (!localStorage.getItem("cartProducts")) {
         localStorage.setItem("cartProducts", JSON.stringify([]));
     }
@@ -21,8 +16,7 @@ function Header() {
             setNumOfGoodsInCart(
                 JSON.parse(localStorage.getItem("cartProducts")).length
             );
-        }
-        else {
+        } else {
             setFlag(true);
         }
     };
@@ -40,10 +34,6 @@ function Header() {
                     </Link>
                 </div>
                 <div className="headerBtn">
-                    
-
-                    
-
                     <Link to="/Registration">
                         <button className="button buttonNone">
                             <img src={"/img/btnProfile.svg"} alt="btnProfile" />
