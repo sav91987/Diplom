@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 function FilterSort({ arrOfProducts }) {
     window.scrollTo(0, 0);
     const [sortOrder, setSortOrder] = useState(arrOfProducts);
-    const [selectedSizes, setSelectedSizes] = useState([]);
+    const [selectedPrices, setSelectedPrices] = useState([]);
     const [arrSelectedCategory, setArrSelectedCategory] = useState([]);
 
     const getIntersectionArr = (arr1, arr2, param) => {
@@ -45,7 +45,6 @@ function FilterSort({ arrOfProducts }) {
                                 break;
                         }
                     });
-
                     break;
                 case "category":
                     filteredArr = arr1.filter((item) =>
@@ -53,11 +52,9 @@ function FilterSort({ arrOfProducts }) {
                     );
                     setArrSelectedCategory(filteredArr);
                     break;
-
                 default:
                     break;
             }
-
             setSortOrder(filteredArr);
         }
     };
@@ -67,14 +64,14 @@ function FilterSort({ arrOfProducts }) {
         let arrOfPrices;
 
         if (e.target.checked) {
-            arrOfPrices = [...selectedSizes, price];
+            arrOfPrices = [...selectedPrices, price];
         } else {
-            arrOfPrices = selectedSizes.filter(
+            arrOfPrices = selectedPrices.filter(
                 (selectedSize) => selectedSize !== price
             );
         }
-        
-        setSelectedSizes(arrOfPrices);
+
+        setSelectedPrices(arrOfPrices);
         if (arrSelectedCategory.length !== 0) {
             getIntersectionArr(arrSelectedCategory, arrOfPrices, "price");
         } else {
@@ -103,7 +100,7 @@ function FilterSort({ arrOfProducts }) {
         priceEls.forEach((element) => {
             element.checked = false;
         });
-        setSelectedSizes([]);
+        setSelectedPrices([]);
     };
 
     return (
@@ -167,7 +164,6 @@ function FilterSort({ arrOfProducts }) {
                         </details>
                     </div>
                 </details>
-
                 <div className="sort">
                     <details id="sizeDetails">
                         <summary className="sort__summary">
@@ -221,5 +217,4 @@ function FilterSort({ arrOfProducts }) {
         </>
     );
 }
-
 export default FilterSort;

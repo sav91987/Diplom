@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Card.css";
+import { useState } from "react";
 
 function Card({ data, numOfShownItems }) {
     const newData = [...data];

@@ -12,8 +12,6 @@
     top: 39px;
 }
 
-
-
 .filter[open] {
     width: 360px;
 }
@@ -59,7 +57,6 @@
     flex-direction: column;
 }
 
-
 .filter__item-summary {
     font-family: Lato;
     color: #6f6e6e;
@@ -73,22 +70,6 @@
 
 .filter__item-summary:hover {
     text-decoration: 2px underline #FF460D;
-    
-}
-
-.filter__link-box {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-    padding: 24px 16px;
-}
-
-.filter__link {
-    font-family: Lato;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
-    color: #6f6e6e;
 }
 
 .sort {

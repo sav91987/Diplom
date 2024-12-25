@@ -1,8 +1,6 @@
 import "./Product.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Card from "../Card/Card.js";
-import { useEffect, useState } from "react";
 
 function Product() {
     const product = JSON.parse(localStorage.getItem("productPage"));
@@ -28,12 +26,7 @@ function Product() {
 
     return (
         <>
-            <Swiper
-                spaceBetween={0}
-                slidesPerView={2}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
-            >
+            <Swiper spaceBetween={0} slidesPerView={3}>
                 <SwiperSlide>
                     <img
                         className="swiper__img"
@@ -83,7 +76,7 @@ function Product() {
                     {product[0].saleCardDiscript}
                 </p>
                 <h2 className="producDiscription__price">
-                    {product[0].saleCardPrice} Р{" "}
+                    {product[0].saleCardPrice} Р
                 </h2>
                 <img
                     className="producDiscription__img"
@@ -91,7 +84,10 @@ function Product() {
                     alt="Line"
                 />
                 <div className="producDiscription__parameters"></div>
-                <button onClick={addToCart} className="producDiscription__btnAddToCart">
+                <button
+                    onClick={addToCart}
+                    className="producDiscription__btnAddToCart"
+                >
                     <svg
                         width="27"
                         height="25"
@@ -104,7 +100,6 @@ function Product() {
                     В корзину
                 </button>
             </section>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         </>
     );
 }
