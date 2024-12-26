@@ -1,4 +1,3 @@
-import "./RegistarationPage.css";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import RegistarationForm from "../RegistarationForm/RegistarationForm";

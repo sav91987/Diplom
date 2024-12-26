@@ -5,7 +5,7 @@ function SelectedProduct() {
     const [totalCost, setTotalCost] = useState(0);
     const [noGoodsInCartText, setNoGoodsInCartText] =
         useState("hidden__emptyCart");
-    const [flag, setFlag] = useState(false);
+   
 
     const selectedProducts = JSON.parse(localStorage.getItem("cartProducts"));
 
@@ -44,7 +44,7 @@ function SelectedProduct() {
         const arr = selectedProducts.filter((item) => targetID !== item.id);
         localStorage.removeItem("cartProducts");
         localStorage.setItem("cartProducts", JSON.stringify(arr));
-        setFlag(true);
+        
         if (selectedProducts.length - 1 === 0) {
             setNoGoodsInCartText("");
 
@@ -64,7 +64,6 @@ function SelectedProduct() {
         } else {
             getCartArr(e.target.id);
         }
-    
     };
 
     const payment = (e) => {

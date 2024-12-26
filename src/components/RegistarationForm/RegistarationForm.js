@@ -1,17 +1,30 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./RegistarationForm.css";
 
-function RegistarationForm() {
-    const registration = (e) => {
-        const name = document.getElementById("name");
-        const surname = document.getElementById("surname");
-        const email = document.getElementById("email");
-        const password = document.getElementById("password");
-        if (name.value === "" || surname.value === "" || email.value === "" || password.value === "") {
+function RegistrationForm() {
+    const [formData, setFormData] = useState({
+        name: "",
+        surname: "",
+        email: "",
+        password: "",
+        sex: "male",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (Object.values(formData).some((field) => field === "")) {
             alert("Заполните все поля");
         } else {
             alert("Успешная регистрация!");
-            e.preventDefault();
             window.location.href = "/";
         }
     };
@@ -25,7 +38,7 @@ function RegistarationForm() {
             </section>
 
             <section className="regForm-loyality container">
-                <form className="regForm">
+                <form className="regForm" onSubmit={handleSubmit}>
                     <div className="regForm__box">
                         <h2 className="regForm__heading">Как вас зовут?</h2>
                         <div className="regForm__form">
@@ -33,27 +46,45 @@ function RegistarationForm() {
                                 className="regForm__input"
                                 type="text"
                                 placeholder="Имя"
-                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                             />
                             <input
                                 className="regForm__input"
                                 type="text"
                                 placeholder="Фамилия"
-                                id="surname"
+                                name="surname"
+                                value={formData.surname}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
+
                     <div className="regForm__box">
                         <h2 className="regForm__heading">Ваш пол?</h2>
                         <div className="regForm__sex_item">
-                            <input type="radio" name="sex" checked />
-                            <label htmlFor="sex">Мужской</label>
+                            <input
+                                type="radio"
+                                name="sex"
+                                value="male"
+                                checked={formData.sex === "male"}
+                                onChange={handleChange}
+                            />
+                            <label>Мужской</label>
                         </div>
                         <div className="regForm__sex_item">
-                            <input type="radio" name="sex" />
-                            <label htmlFor="sex">Женский</label>
+                            <input
+                                type="radio"
+                                name="sex"
+                                value="female"
+                                checked={formData.sex === "female"}
+                                onChange={handleChange}
+                            />
+                            <label>Женский</label>
                         </div>
                     </div>
+
                     <div className="regForm__box">
                         <h2 className="regForm__heading">
                             Данные для авторизации
@@ -63,20 +94,20 @@ function RegistarationForm() {
                                 className="regForm__input"
                                 type="email"
                                 placeholder="Email"
-                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                             />
                             <input
                                 className="regForm__input"
                                 type="password"
                                 placeholder="Пароль"
-                                id="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange}
                             />
                         </div>
-                        <button
-                            onClick={registration}
-                            type="submit"
-                            className="regForm__btn"
-                        >
+                        <button type="submit" className="regForm__btn">
                             РЕГИСТРАЦИЯ
                             <svg
                                 width="17"
@@ -106,4 +137,4 @@ function RegistarationForm() {
     );
 }
 
-export default RegistarationForm;
+export default RegistrationForm;
