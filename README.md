@@ -1,3 +1,6 @@
+# Итоговая аттестация
+Дипломный проект на тему "Разработка веб-сайта по продаже офисной техники и сетевого оборудования компании".
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
